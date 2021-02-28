@@ -32,6 +32,4 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = toDoArray[indexPath.row]
         return cell
     }
-    
-     
 }
