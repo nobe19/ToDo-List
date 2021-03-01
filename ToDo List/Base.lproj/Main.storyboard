@@ -83,7 +83,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhN-MB-0fa">
-                                                    <rect key="frame" x="15" y="5" width="289" height="34"/>
+                                                    <rect key="frame" x="15" y="5" width="288" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -93,16 +93,40 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="HHO-hQ-5wz">
+                            <tableViewSection headerTitle="reminder set" id="HHO-hQ-5wz">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="sMj-gV-Pll">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="sMj-gV-Pll">
+                                        <rect key="frame" x="0.0" y="155" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMj-gV-Pll" id="UWi-8V-dGH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-oZ-zeF">
+                                                    <rect key="frame" x="16" y="7" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="reminderSwitchChanged:" destination="Age-yS-vfw" eventType="valueChanged" id="WQu-7L-sly"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12, 12:12:!2 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-uc-86a">
+                                                    <rect key="frame" x="146" y="12" width="158" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="aFh-p6-VeC">
+                                        <rect key="frame" x="0.0" y="199" width="320" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFh-p6-VeC" id="kkv-UH-gCh">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="u8k-mN-11E">
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LOC-S0-28Z">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </datePicker>
@@ -114,7 +138,7 @@
                             <tableViewSection headerTitle="Notes" id="rWm-Rt-U51">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="Mwu-UZ-chz">
-                                        <rect key="frame" x="0.0" y="391" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="455" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mwu-UZ-chz" id="RG9-Hh-Tcr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
@@ -153,9 +177,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="u8k-mN-11E" id="QPs-Lx-ekx"/>
+                        <outlet property="dateLabel" destination="rLH-uc-86a" id="rJh-94-htP"/>
+                        <outlet property="datePicker" destination="LOC-S0-28Z" id="ysW-6E-iNz"/>
                         <outlet property="nameField" destination="UhN-MB-0fa" id="AAb-J3-6LC"/>
                         <outlet property="noteView" destination="4qW-gs-NLQ" id="due-K5-KFK"/>
+                        <outlet property="reminderSwitch" destination="H6b-oZ-zeF" id="Wdi-e8-IFu"/>
                         <outlet property="saveBarButton" destination="jFI-pZ-saD" id="a1A-En-hFq"/>
                     </connections>
                 </tableViewController>
