@@ -92,12 +92,12 @@ class ToDoListViewController: UIViewController {
 
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("🤠 numberOfRowsInSection was just called. Returning \(toDoItems.count) ")
+//        print("🤠 numberOfRowsInSection was just called. Returning \(toDoItems.count) ")
         return toDoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("🚣‍♂️   cellForRowAt was just called for indexPath.row = \(indexPath.row) which is the cell containing \(toDoItems[indexPath.row])")
+//        print("🚣‍♂️   cellForRowAt was just called for indexPath.row = \(indexPath.row) which is the cell containing \(toDoItems[indexPath.row])")
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = toDoItems[indexPath.row].name
         return cell
