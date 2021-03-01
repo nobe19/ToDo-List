@@ -20,6 +20,22 @@ class ToDoListViewController: UIViewController {
       
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadData()
+    }
+    
+    func loadData() {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentURL = directoryURL.appendingPathComponent("todos").appendingPathExtension("json")
+        
+        guard let data = try? Data(contentsOf: documentURL) else {return}
+        let jsonDecoder = JSONDecoder()
+        do {
+            toDoItems = try jsonDecoder.decode(Array<ToDoItem>.self, from: data)
+            tableView.reloadData()
+        } catch {
+            print("🤬 ERROR: COuld not load data \(error.localizedDescription)")
+        }
     }
     
     func saveData() {
