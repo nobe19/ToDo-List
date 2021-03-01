@@ -22,6 +22,19 @@ class ToDoListViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    func saveData() {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentURL = directoryURL.appendingPathComponent("todos").appendingPathExtension("json")
+        
+        let jsonEncoder = JSONEncoder()
+        let data = try? jsonEncoder.encode(toDoItems)
+        do {
+            try data?.write(to: documentURL, options: .noFileProtection)
+        } catch {
+            print("🤬 ERROR: COuld not save data \(error.localizedDescription)")
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             let destination = segue.destination as! ToDoDetailTableViewController
@@ -45,6 +58,7 @@ class ToDoListViewController: UIViewController {
             tableView.insertRows(at: [newIndexPath], with: .bottom)
             tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
         }
+        saveData()
     }
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
         if tableView.isEditing {
@@ -77,6 +91,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             toDoItems.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveData()
         }
     }
     
@@ -84,6 +99,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         let itemToMove = toDoItems[sourceIndexPath.row]
         toDoItems.remove(at: sourceIndexPath.row)
         toDoItems.insert(itemToMove, at: destinationIndexPath.row)
+        saveData()
     }
     
 }
